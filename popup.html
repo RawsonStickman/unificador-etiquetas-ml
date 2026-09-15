@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Unificador de Etiquetas</title>
+  <style>
+    body {
+      width: 280px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #fff;
+    }
+    h1 {
+      font-size: 15px;
+      margin: 0 0 4px;
+      color: #1a1a1a;
+    }
+    p.sub {
+      font-size: 12px;
+      color: #666;
+      margin: 0 0 16px;
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .toggle-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+    }
+    .switch {
+      position: relative;
+      width: 40px;
+      height: 22px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc;
+      transition: .2s;
+      border-radius: 22px;
+    }
+    .slider:before {
+      position: absolute; content: "";
+      height: 16px; width: 16px;
+      left: 3px; bottom: 3px;
+      background-color: white;
+      transition: .2s;
+      border-radius: 50%;
+    }
+    input:checked + .slider { background-color: #3483fa; }
+    input:checked + .slider:before { transform: translateX(18px); }
+    .status {
+      font-size: 11px;
+      color: #888;
+      line-height: 1.5;
+    }
+    .status strong { color: #333; }
+  </style>
+</head>
+<body>
+  <h1>🏷️ Unificador de Etiquetas</h1>
+  <p class="sub">Intercepta o download do Mercado Livre e entrega já unificado.</p>
+
+  <div class="toggle-row">
+    <span class="toggle-label">Ativo</span>
+    <label class="switch">
+      <input type="checkbox" id="enabledToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <p class="status">
+    Quando ativo, ao clicar em <strong>"Imprimir arquivos de envio"</strong> ou <strong>"Imprimir etiqueta"</strong> no Mercado Livre, o PDF baixado será automaticamente unificado (etiqueta + DANFE + código de barras).
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

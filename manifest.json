@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Unificador de Etiquetas ML",
+  "version": "1.2.0",
+  "description": "Unifica automaticamente etiquetas de envio e nota fiscal do Mercado Livre ao clicar em Imprimir.",
+  "permissions": [
+    "downloads",
+    "offscreen",
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://vendedores.mercadolivre.com.br/vendas/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://vendedores.mercadolivre.com.br/vendas/*"
+      ],
+      "js": ["content-main.js"],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://vendedores.mercadolivre.com.br/vendas/*"
+      ],
+      "js": ["content-relay.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "action": {
+    "default_title": "Unificador de Etiquetas ML",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  }
+}
