@@ -40,6 +40,18 @@ Com a extensão ativa, basta usar o Mercado Livre normalmente:
 
 Se algo der errado durante o processamento, a extensão baixa o PDF original sem modificações como medida de segurança, para você nunca ficar sem o arquivo.
 
+### Configuração necessária no Mercado Livre
+
+Para que o PDF baixado tenha a etiqueta e o DANFE nas páginas alternadas (formato que a extensão espera), confirme estas configurações em **Configurações de impressão de etiquetas e arquivos de envio**, no painel de vendas do Mercado Livre:
+
+**Tipo de impressora:** `Impressora normal` — **Formato da etiqueta:** `PDF 10x15`
+
+![Configuração de tipo de impressora e formato da etiqueta](docs/configuracao-tipo-impressora.png)
+
+**Ativar impressão conjunta do DANFE e arquivos de envio:** ligado
+
+![Configuração de impressão conjunta do DANFE](docs/configuracao-impressao-conjunta.png)
+
 ## 🏗️ Arquitetura
 
 ```
